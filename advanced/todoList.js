@@ -16,9 +16,8 @@
 
 let output = [];
 
+
 addTask = (Task) =>  output.includes(Task) ? false : output.push(Task)
 removeTask = (Task) => output.includes(Task) ? output.splice(output.indexOf(Task),1) : false
 showTasks = () => output
-
-
 module.exports = { addTask, removeTask, showTasks };
