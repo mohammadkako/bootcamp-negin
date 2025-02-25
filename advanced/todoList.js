@@ -17,28 +17,21 @@
 let tasks = [];
 
 function addTask(task) {
-    tasks.push(task);
-    console.log(`Task added: ${task}`);
+	tasks.push(task);
 }
-function removeTask(task){
-    const index = tasks.indexOf(task);
-    if (index !== -1) {
-        tasks.splice(index, 1);
-        console.log(`Task removed: ${task}`);
-    } else {
-        console.log(`Task not found: ${task}`);
-    }
+
+function removeTask(task) {
+	const index = tasks.indexOf(task);
+	if (index > -1) {
+		tasks.splice(index, 1);
+	}
+
+    // if you dont want to use clean Before running tests use this in removeTask function!
+    // tasks = tasks.filter(t => t !== task);
 }
 
 function showTasks() {
-    if (tasks.length === 0) {
-        console.log("No tasks available.");
-    } else {
-        tasks.forEach(task => {
-            console.log(`- ${task}`);
-        });
-    }
+	return tasks;
 }
-
 
 module.exports = { addTask, removeTask, showTasks };
